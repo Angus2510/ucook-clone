@@ -1,0 +1,144 @@
+.container {
+  margin: 8rem auto;
+  background-color: var(--color-grey-light-1);
+  box-shadow: var(--shadow-dark);
+  min-height: 50rem;
+
+  @media only screen and (max-width: $bp-largest) {
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+.navbar {
+  display: flex;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  background-color: white;
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    font-size: 10px;
+    list-style: none;
+    margin: 2rem;
+
+    &--1 {
+      margin-left: 20px;
+    }
+    &--13 {
+      border: none;
+    }
+    &--14 {
+      background-color: orange;
+      color: white;
+      padding: 5px;
+      border-radius: 3px;
+      border: orange;
+    }
+
+    &--15 {
+      height: 15px;
+      width: 15px;
+      margin-right: 10px;
+    }
+  }
+}
+
+.header {
+  position: relative;
+  text-align: center;
+
+  &__text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &__btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 4rem;
+    color: white;
+    background-color: black;
+    padding: 0.5rem;
+    border-radius: 5px;
+  }
+
+  &__img {
+    width: 100%;
+    height: 80vh;
+  }
+}
+
+.how {
+  &__header {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    font-size: 2rem;
+    color: black;
+    height: 30vh;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  &__choose {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &--img {
+      height: 12rem;
+    }
+
+    &--p {
+      width: 60%;
+      text-align: center;
+    }
+  }
+
+  &__deliver {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &--img {
+      height: 12rem;
+    }
+
+    &--p {
+      width: 70%;
+      text-align: center;
+    }
+  }
+
+  &__cook {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &--img {
+      height: 12rem;
+    }
+
+    &--p {
+      width: 70%;
+      text-align: center;
+    }
+  }
+}

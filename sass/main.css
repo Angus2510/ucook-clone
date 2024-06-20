@@ -1,0 +1,176 @@
+/*the root is a great place to store variable as it will be avaliable throughout the project
+*/
+:root {
+  --color-primary-1: #469a19;
+  --color-primary-2: #f2a50c;
+  --color-grey-light-1: #faf9f9;
+  --color-grey-light-2: #f4f2f2;
+  --color-grey-light-3: #f0eeee;
+  --color-grey-light-4: #ccc;
+  --color-grey-dark-1: #333;
+  --color-grey-dark-2: #777;
+  --color-grey-dark-3: #999;
+  --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+  --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.06);
+  --line: 1px solid var(--color-grey-light-2);
+}
+
+/* these are the global reset  all the below code is the base of the project*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+@media only screen and (max-width: 68.5em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+body {
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-grey-dark-2);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.container {
+  margin: 8rem auto;
+  background-color: var(--color-grey-light-1);
+  box-shadow: var(--shadow-dark);
+  min-height: 50rem;
+}
+@media only screen and (max-width: 75em) {
+  .container {
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+.navbar {
+  display: flex;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  background-color: white;
+}
+.navbar__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  font-size: 10px;
+  list-style: none;
+  margin: 2rem;
+}
+.navbar__item--1 {
+  margin-left: 20px;
+}
+.navbar__item--13 {
+  border: none;
+}
+.navbar__item--14 {
+  background-color: orange;
+  color: white;
+  padding: 5px;
+  border-radius: 3px;
+  border: orange;
+}
+.navbar__item--15 {
+  height: 15px;
+  width: 15px;
+  margin-right: 10px;
+}
+
+.header {
+  position: relative;
+  text-align: center;
+}
+.header__text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.header__btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 4rem;
+  color: white;
+  background-color: black;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+.header__img {
+  width: 100%;
+  height: 80vh;
+}
+
+.how__header {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  font-size: 2rem;
+  color: black;
+  height: 30vh;
+}
+.how__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.how__choose {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.how__choose--img {
+  height: 12rem;
+}
+.how__choose--p {
+  width: 60%;
+  text-align: center;
+}
+.how__deliver {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.how__deliver--img {
+  height: 12rem;
+}
+.how__deliver--p {
+  width: 70%;
+  text-align: center;
+}
+.how__cook {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.how__cook--img {
+  height: 12rem;
+}
+.how__cook--p {
+  width: 70%;
+  text-align: center;
+}/*# sourceMappingURL=main.css.map */
