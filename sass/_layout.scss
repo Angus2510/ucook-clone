@@ -14,6 +14,10 @@ $button-color: #1c683c;
 $input-border-color: #e0e0e0;
 $text-color: #fff;
 $hover-color: #1f5c29;
+$link-color: #0066cc;
+$card-background: #fff;
+$card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+$rating-color: #ffd700; /* Gold color for the stars */
 
 @mixin header {
   display: flex;
@@ -21,7 +25,7 @@ $hover-color: #1f5c29;
   margin-top: 3rem;
   font-size: 2rem;
   color: black;
-  height: 30vh;
+  margin-bottom: 3rem;
 }
 
 @mixin container {
@@ -29,6 +33,7 @@ $hover-color: #1f5c29;
   flex: 1;
   align-items: center;
   justify-content: space-around;
+  margin-bottom: 3rem;
 }
 
 @mixin img {
@@ -384,6 +389,148 @@ $hover-color: #1f5c29;
     font-size: 1rem;
   }
 }
+
+.card-section {
+  padding: 40px 20px;
+  text-align: center;
+
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: $text-color;
+  }
+
+  .card-carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .cards-container {
+      display: flex;
+      overflow: hidden;
+      width: 100%;
+      scroll-snap-type: x mandatory;
+
+      .card {
+        background-color: $card-background;
+        box-shadow: $card-shadow;
+        border-radius: 8px;
+        margin: 0 10px;
+        min-width: 250px;
+        max-width: 300px;
+        overflow: hidden;
+        scroll-snap-align: center;
+
+        .card-image {
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+        }
+
+        .card-content {
+          padding: 15px;
+          text-align: left;
+
+          h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: black;
+          }
+
+          p {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            color: black;
+          }
+
+          a {
+            font-size: 1rem;
+            color: $link-color;
+          }
+        }
+      }
+    }
+
+    .carousel-button {
+      background-color: $button-color;
+      color: black;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: $card-shadow;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+
+      &:hover {
+        background-color: $hover-color;
+      }
+
+      &.left {
+        left: -20px;
+      }
+
+      &.right {
+        right: -20px;
+      }
+
+      img {
+        width: 20px;
+        height: 20px;
+        transform: scaleX(-1);
+
+        &.right img {
+          transform: scaleX(1);
+        }
+      }
+    }
+  }
+}
+
+.testimonials-section {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px 20px;
+
+  .testimonial {
+    background-color: white;
+
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+
+    .testimonial-content {
+      h4 {
+        display: flex;
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        color: black;
+        font-weight: bold;
+      }
+
+      .rating {
+        font-size: 1.5rem;
+        color: $rating-color;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 1rem;
+        color: black;
+        font-style: italic;
+      }
+    }
+  }
+}
+
 .footer {
   background-color: $background-color;
   padding: 20px 0;
@@ -420,6 +567,9 @@ $hover-color: #1f5c29;
     h4 {
       margin-bottom: 10px;
     }
+  }
+  &__links {
+    list-style: none;
   }
 
   &__bottom {
@@ -458,7 +608,7 @@ $hover-color: #1f5c29;
 
   &__button {
     background-color: $button-color;
-    color: $text-color;
+    color: black;
     padding: 0.5rem 1rem;
     border-radius: 0 0.25rem 0.25rem 0;
     border: none;
