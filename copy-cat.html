@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>UCOOK COPY</title>
     <link rel="stylesheet" href="./sass/main.css" type="text/css" />
+
     <link
       rel="preload"
       href="/fonts/Gordita-Regular.otf"
@@ -84,18 +85,256 @@
 
       <section class="on-the-menu" id="menu"></section>
 
-      <section class="accordion" id="accordion"></section>
+      <section class="carousel" id="carousel">
+        <div class="carousel">
+          <!-- Hidden radio buttons to control the carousel -->
+          <input type="radio" id="carousel-1" name="carousel" checked />
+          <input type="radio" id="carousel-2" name="carousel" />
+          <input type="radio" id="carousel-3" name="carousel" />
+          <input type="radio" id="carousel-4" name="carousel" />
 
-      <section class="why-ucook" id="why">
-        <h1 class="why-ucook__header"></h1>
-        <div class="why-ucook__container"></div>
+          <div class="carousel__inner">
+            <div class="carousel-item">
+              <div
+                class="carousel-item__image"
+                style="background-image: url('./img/carousel-snack.webp')"
+              ></div>
+              <div class="carousel-item__content">
+                <h1>Feeling Snackish?</h1>
+                <p>
+                  Grab your favorite artisanal snacks and treats on UCOOK
+                  market.
+                </p>
+                <button>ORDER NOW</button>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div
+                class="carousel-item__image"
+                style="background-image: url('./img/carousel-lunch.webp')"
+              ></div>
+              <div class="carousel-item__content">
+                <h1>Lunch is served</h1>
+                <p>Salad, wrap, sandwich, couscous - the choice is yours!</p>
+                <button>SHOP LUNCH</button>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div
+                class="carousel-item__image"
+                style="background-image: url('./img/carousel-wine.webp')"
+              ></div>
+              <div class="carousel-item__content">
+                <h1>A toast to Vilafonte!</h1>
+                <p>Add any 3 wines to your Meal Kit order and save 25%</p>
+                <button>SHOP NOW</button>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div
+                class="carousel-item__image"
+                style="background-image: url('./img/carousel-frozen.webp')"
+              ></div>
+              <div class="carousel-item__content">
+                <h1>Indulge in hearty Frozen Craft Meals</h1>
+                <p>
+                  From butter chicken to cottage pie, find the perfect meal for
+                  a cosy night in.
+                </p>
+                <button>ORDER NOW</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Navigation controls -->
+          <div class="carousel__nav">
+            <label for="carousel-1" class="carousel__nav__label">1</label>
+            <label for="carousel-2" class="carousel__nav__label">2</label>
+            <label for="carousel-3" class="carousel__nav__label">3</label>
+            <label for="carousel-4" class="carousel__nav__label">4</label>
+          </div>
+        </div>
+      </section>
+
+      <section class="why" id="why">
+        <h1 class="why__header">Why UCOOK?</h1>
+        <div class="why__container">
+          <div class="why__chef">
+            <img class="why__chef--img" src="./img/chef.svg" alt="chef hat" />
+            <h3 class="why__chef--header">Cook like a chef</h3>
+            <p class="why__chef--p">
+              Whip up restaurant-quality meals using fresh ingredients and
+              simple-to-follow recipes. With 24 new dinners and 4 new lunch
+              dishes every week, you’ll hone your kitchen skills and build your
+              culinary repertoire.
+            </p>
+          </div>
+          <div class="why__money">
+            <img class="why__money--img" src="./img/money.svg" alt="coin" />
+            <h3 class="why__money--header">Saves you money</h3>
+            <p class="why__money--p">
+              With tasty meals from less than R65 per person, we take care of
+              all the portioning and measuring so you only get exactly what you
+              need. No wastage, no queueing, and delivery straight to your door!
+            </p>
+          </div>
+          <div class="why__produce">
+            <img
+              class="why__produce--img"
+              src="./img/fresh.svg"
+              alt="fresh produce"
+            />
+            <h3 class="why__produce--header">Fresh produce</h3>
+            <p class="why__produce--p">
+              We source only the best and freshest ingredients that we can find
+              from local farms and businesses. We choose reliable suppliers and
+              aim for organic and free range wherever it’s possible.
+            </p>
+          </div>
+        </div>
+        <div class="why__container">
+          <div class="why__decisions">
+            <img
+              class="why__decisions--img"
+              src="./img/brain.svg"
+              alt="brain"
+            />
+            <h3 class="why__decisions--header">Conscious decisions</h3>
+            <p class="why__decisions--p">
+              We're all about making better eating choices, supporting local
+              businesses, and reducing our carbon footprint. We consider what we
+              do and the impact that our choices will have on the planet.
+            </p>
+          </div>
+          <div class="why__commitment">
+            <img
+              class="why__commitment--img"
+              src="./img/commitment.svg"
+              alt="Calender"
+            />
+            <h3 class="why__commitment--header">No commitment</h3>
+            <p class="why__commitment--p">
+              You can pause at any time for flexibility that meets your needs.
+              When you go away or have events planned for your evenings, you can
+              pause without penalty or even change your delivery address.
+            </p>
+          </div>
+          <div class="why__box">
+            <img class="why__box--img" src="./img/convienience.svg" alt="box" />
+            <h3 class="why__box--header">Convenience</h3>
+            <p class="why__box--p">
+              Say goodbye to meal-planning panic; we've taken the hassle out of
+              deciding what’s for lunch and dinner! Our range of options ensures
+              every meal is deliciously simple.
+            </p>
+          </div>
+        </div>
+        <button class="why__btn">GET STARTED NOW</button>
       </section>
 
       <section class="craving" id="craving"></section>
 
       <section class="testimonials" id="testimonials"></section>
 
-      <footer class="footer" id="footer"></footer>
+      <footer class="footer">
+        <div class="container">
+          <div class="footer__top">
+            <div class="footer__subscribe">
+              <h3 class="footer__title">KEEP IN TOUCH WITH OUR KITCHEN</h3>
+              <form class="footer__form">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  class="footer__input"
+                />
+                <button type="submit" class="footer__button">SIGN ME UP</button>
+              </form>
+            </div>
+          </div>
+          <div class="footer__middle">
+            <div class="footer__column">
+              <h4 class="footer__subtitle">PRODUCT</h4>
+              <ul>
+                <li><a href="#">MEAL KITS</a></li>
+                <li><a href="#">FROZEN</a></li>
+                <li><a href="#">WINE</a></li>
+                <li><a href="#">MARKET</a></li>
+              </ul>
+            </div>
+            <div class="footer__column">
+              <h4 class="footer__subtitle">COMPANY</h4>
+              <ul>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">CAREERS</a></li>
+                <li><a href="#">RECYCLING</a></li>
+              </ul>
+            </div>
+            <div class="footer__column">
+              <h4 class="footer__subtitle">SUPPORT</h4>
+              <ul>
+                <li><a href="#">FAQ'S</a></li>
+                <li><a href="#">CONTACT</a></li>
+                <li><a href="#">021 447 4424</a></li>
+                <li><a href="#">072 020 1555</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer__bottom">
+            <div class="footer__social">
+              <a href="#"
+                ><img
+                  src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Arrows_right.svg"
+                  alt="App Store"
+              /></a>
+              <a href="#"
+                ><img
+                  src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Arrows_right.svg"
+                  alt="Google Play"
+              /></a>
+              <a href="#"
+                ><img
+                  src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Arrows_right.svg"
+                  alt="Facebook"
+              /></a>
+              <a href="#"
+                ><img
+                  src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Arrows_right.svg"
+                  alt="Instagram"
+              /></a>
+              <a href="#"
+                ><img
+                  src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Arrows_right.svg"
+                  alt="Twitter"
+              /></a>
+              <a href="#"
+                ><img
+                  src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Arrows_right.svg"
+                  alt="YouTube"
+              /></a>
+              <a href="#"
+                ><img
+                  src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Arrows_right.svg"
+                  alt="TikTok"
+              /></a>
+            </div>
+            <div class="footer__legal">
+              <p>
+                &copy; 2024 YOUR COMPANY. All rights reserved |
+                <a href="#">Terms & Conditions</a> |
+                <a href="#">Privacy Policy</a> | <a href="#">Referral Terms</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="help-button">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Arrows_right.svg"
+            alt="Help Icon"
+            width="20"
+          />
+          Help
+        </div>
+      </footer>
     </div>
   </body>
 </html>

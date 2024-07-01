@@ -1,3 +1,65 @@
+$carousel-width: 100%;
+$carousel-height: 400px;
+$item-half-width: 50%;
+$item-content-padding: 20px;
+
+$button-color: #fff;
+$button-padding: 10px 20px;
+$button-border-radius: 5px;
+$animation-duration: 20s;
+$primary-color: #333;
+$secondary-color: #ff6d6d;
+$background-color: #f8f8f8;
+$button-color: #1c683c;
+$input-border-color: #e0e0e0;
+$text-color: #fff;
+$hover-color: #1f5c29;
+
+@mixin header {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  font-size: 2rem;
+  color: black;
+  height: 30vh;
+}
+
+@mixin container {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-around;
+}
+
+@mixin img {
+  height: 12rem;
+}
+
+@mixin cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin para {
+  width: 60%;
+  text-align: center;
+  color: black;
+}
+
+@mixin btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 6rem;
+  color: white;
+  background-color: black;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
 .container {
   margin: 8rem auto;
   background-color: var(--color-grey-light-1);
@@ -35,11 +97,11 @@
       border: none;
     }
     &--14 {
-      background-color: orange;
+      background-color: orangered;
       color: white;
       padding: 5px;
       border-radius: 3px;
-      border: orange;
+      border: orangered;
     }
 
     &--15 {
@@ -53,6 +115,9 @@
 .header {
   position: relative;
   text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: black;
 
   &__text {
     position: absolute;
@@ -61,15 +126,7 @@
     transform: translate(-50%, -50%);
   }
   &__btn {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin-top: 4rem;
-    color: white;
-    background-color: black;
-    padding: 0.5rem;
-    border-radius: 5px;
+    @include btn;
   }
 
   &__img {
@@ -80,65 +137,345 @@
 
 .how {
   &__header {
-    display: flex;
-    justify-content: center;
-    margin-top: 3rem;
-    font-size: 2rem;
-    color: black;
-    height: 30vh;
+    @include header;
   }
 
   &__container {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+    @include container;
   }
 
   &__choose {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    @include cards;
 
     &--img {
-      height: 12rem;
+      @include img;
     }
 
     &--p {
-      width: 60%;
-      text-align: center;
+      @include para;
     }
   }
 
   &__deliver {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    @include cards;
 
     &--img {
-      height: 12rem;
+      @include img;
     }
 
     &--p {
-      width: 70%;
-      text-align: center;
+      @include para;
     }
   }
 
   &__cook {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    @include cards;
 
     &--img {
-      height: 12rem;
+      @include img;
     }
 
     &--p {
-      width: 70%;
-      text-align: center;
+      @include para;
+    }
+  }
+}
+
+.carousel {
+  width: $carousel-width;
+  height: $carousel-height;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  input[type="radio"] {
+    display: none;
+  }
+
+  .carousel__inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 400%;
+  }
+
+  .carousel-item {
+    width: 100%;
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+
+    &__image {
+      width: $item-half-width;
+      height: $carousel-height;
+      background-size: cover;
+      background-position: center;
+      border-radius: 0 0 6rem;
+      background-color: orangered;
+    }
+
+    &__content {
+      width: $item-half-width;
+      height: $carousel-height;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: $item-content-padding;
+      background-color: orangered;
+      color: #fff;
+
+      h1 {
+        margin: 0 0 10px 0;
+        font-size: 4rem;
+      }
+
+      p {
+        margin: 0 0 20px 0;
+        font-size: 1.5rem;
+        color: #fff;
+      }
+
+      button {
+        background-color: orangered;
+        border: 1px solid black;
+        padding: $button-padding;
+        width: 30%;
+
+        border-radius: $button-border-radius;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+    }
+  }
+
+  .carousel__nav {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+
+    .carousel__nav__label {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background-color: #ccc;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #aaa;
+      }
+    }
+  }
+}
+
+#carousel-1:checked ~ .carousel__inner {
+  transform: translateX(0%);
+}
+
+#carousel-2:checked ~ .carousel__inner {
+  transform: translateX(-100%);
+}
+
+#carousel-3:checked ~ .carousel__inner {
+  transform: translateX(-200%);
+}
+
+#carousel-4:checked ~ .carousel__inner {
+  transform: translateX(-300%);
+}
+
+.why {
+  &__header {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    color: black;
+    font-size: 2rem;
+  }
+
+  &__container {
+    display: flex;
+    flex: 1;
+  }
+
+  &__chef {
+    @include cards;
+
+    &--img {
+      @include img;
+    }
+
+    &--p {
+      @include para;
+    }
+  }
+
+  &__money {
+    @include cards;
+
+    &--img {
+      @include img;
+    }
+
+    &--p {
+      @include para;
+    }
+  }
+
+  &__produce {
+    @include cards;
+
+    &--img {
+      @include img;
+    }
+
+    &--p {
+      @include para;
+    }
+  }
+
+  &__decisions {
+    @include cards;
+
+    &--img {
+      @include img;
+    }
+
+    &--p {
+      @include para;
+    }
+  }
+
+  &__commitment {
+    @include cards;
+
+    &--img {
+      @include img;
+    }
+
+    &--p {
+      @include para;
+    }
+  }
+
+  &__box {
+    @include cards;
+
+    &--img {
+      @include img;
+    }
+
+    &--p {
+      @include para;
+    }
+  }
+  &__btn {
+    padding: 10px 20px;
+    background-color: black;
+    color: #fff;
+    margin-top: 5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+}
+.footer {
+  background-color: $background-color;
+  padding: 20px 0;
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__top {
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+    padding: 10px 20px;
+  }
+
+  &__middle {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 20px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+  }
+
+  &__column {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+    h4 {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+  }
+
+  &__subscribe {
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  &__form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__input {
+    border: 1px solid $input-border-color;
+    border-right: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem 0 0 0.25rem;
+    outline: none;
+    &:focus {
+      border-color: $primary-color;
+    }
+  }
+
+  &__button {
+    background-color: $button-color;
+    color: $text-color;
+    padding: 0.5rem 1rem;
+    border-radius: 0 0.25rem 0.25rem 0;
+    border: none;
+    cursor: pointer;
+    &:hover {
+      background-color: $hover-color;
+    }
+  }
+
+  &__social {
+    display: flex;
+    justify-content: center;
+    a {
+      margin: 0 10px;
+      img {
+        width: 24px;
+      }
     }
   }
 }

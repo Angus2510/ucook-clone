@@ -84,11 +84,11 @@ body {
   border: none;
 }
 .navbar__item--14 {
-  background-color: orange;
+  background-color: orangered;
   color: white;
   padding: 5px;
   border-radius: 3px;
-  border: orange;
+  border: orangered;
 }
 .navbar__item--15 {
   height: 15px;
@@ -99,6 +99,9 @@ body {
 .header {
   position: relative;
   text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: black;
 }
 .header__text {
   position: absolute;
@@ -111,7 +114,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  margin-top: 4rem;
+  margin-top: 6rem;
   color: white;
   background-color: black;
   padding: 0.5rem;
@@ -132,6 +135,7 @@ body {
 }
 .how__container {
   display: flex;
+  flex: 1;
   align-items: center;
   justify-content: space-around;
 }
@@ -147,6 +151,7 @@ body {
 .how__choose--p {
   width: 60%;
   text-align: center;
+  color: black;
 }
 .how__deliver {
   display: flex;
@@ -158,8 +163,9 @@ body {
   height: 12rem;
 }
 .how__deliver--p {
-  width: 70%;
+  width: 60%;
   text-align: center;
+  color: black;
 }
 .how__cook {
   display: flex;
@@ -171,6 +177,294 @@ body {
   height: 12rem;
 }
 .how__cook--p {
-  width: 70%;
+  width: 60%;
   text-align: center;
+  color: black;
+}
+
+.carousel {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carousel input[type=radio] {
+  display: none;
+}
+.carousel .carousel__inner {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 400%;
+}
+.carousel .carousel-item {
+  width: 100%;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+}
+.carousel .carousel-item__image {
+  width: 50%;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 0 0 6rem;
+  background-color: orangered;
+}
+.carousel .carousel-item__content {
+  width: 50%;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  background-color: orangered;
+  color: #fff;
+}
+.carousel .carousel-item__content h1 {
+  margin: 0 0 10px 0;
+  font-size: 4rem;
+}
+.carousel .carousel-item__content p {
+  margin: 0 0 20px 0;
+  font-size: 1.5rem;
+  color: #fff;
+}
+.carousel .carousel-item__content button {
+  background-color: orangered;
+  border: 1px solid black;
+  padding: 10px 20px;
+  width: 30%;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.carousel .carousel__nav {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+.carousel .carousel__nav .carousel__nav__label {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.carousel .carousel__nav .carousel__nav__label:hover {
+  background-color: #aaa;
+}
+
+#carousel-1:checked ~ .carousel__inner {
+  transform: translateX(0%);
+}
+
+#carousel-2:checked ~ .carousel__inner {
+  transform: translateX(-100%);
+}
+
+#carousel-3:checked ~ .carousel__inner {
+  transform: translateX(-200%);
+}
+
+#carousel-4:checked ~ .carousel__inner {
+  transform: translateX(-300%);
+}
+
+.why__header {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  color: black;
+  font-size: 2rem;
+}
+.why__container {
+  display: flex;
+  flex: 1;
+}
+.why__chef {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.why__chef--img {
+  height: 12rem;
+}
+.why__chef--p {
+  width: 60%;
+  text-align: center;
+  color: black;
+}
+.why__money {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.why__money--img {
+  height: 12rem;
+}
+.why__money--p {
+  width: 60%;
+  text-align: center;
+  color: black;
+}
+.why__produce {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.why__produce--img {
+  height: 12rem;
+}
+.why__produce--p {
+  width: 60%;
+  text-align: center;
+  color: black;
+}
+.why__decisions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.why__decisions--img {
+  height: 12rem;
+}
+.why__decisions--p {
+  width: 60%;
+  text-align: center;
+  color: black;
+}
+.why__commitment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.why__commitment--img {
+  height: 12rem;
+}
+.why__commitment--p {
+  width: 60%;
+  text-align: center;
+  color: black;
+}
+.why__box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.why__box--img {
+  height: 12rem;
+}
+.why__box--p {
+  width: 60%;
+  text-align: center;
+  color: black;
+}
+.why__btn {
+  padding: 10px 20px;
+  background-color: black;
+  color: #fff;
+  margin-top: 5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.footer {
+  background-color: #f8f8f8;
+  padding: 20px 0;
+}
+.footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer__top {
+  text-align: center;
+  margin-bottom: 20px;
+  width: 100%;
+  padding: 10px 20px;
+}
+.footer__middle {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  padding: 10px 20px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+.footer__column {
+  flex: 1;
+  min-width: 200px;
+  margin: 10px;
+}
+.footer__column h4 {
+  margin-bottom: 10px;
+}
+.footer__bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 20px;
+}
+.footer__subscribe {
+  margin-bottom: 1rem;
+}
+.footer__title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.footer__form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer__input {
+  border: 1px solid #e0e0e0;
+  border-right: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem 0 0 0.25rem;
+  outline: none;
+}
+.footer__input:focus {
+  border-color: #333;
+}
+.footer__button {
+  background-color: #1c683c;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0 0.25rem 0.25rem 0;
+  border: none;
+  cursor: pointer;
+}
+.footer__button:hover {
+  background-color: #1f5c29;
+}
+.footer__social {
+  display: flex;
+  justify-content: center;
+}
+.footer__social a {
+  margin: 0 10px;
+}
+.footer__social a img {
+  width: 24px;
 }/*# sourceMappingURL=main.css.map */
